@@ -7,6 +7,8 @@ import { HomeComponent } from './components/home/home.component';
 import { ProtegidaComponent } from './components/protegida/protegida.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
+import {AuthModule} from '@auth0/auth0-angular';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +18,11 @@ import { NavbarComponent } from './components/navbar/navbar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AuthModule.forRoot({
+      domain: 'dev-sk4dvsy8.us.auth0.com',
+      clientId: 'KT8AK1bZkaOdW6D5zxAjV1FEuk65Qu0A'
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
